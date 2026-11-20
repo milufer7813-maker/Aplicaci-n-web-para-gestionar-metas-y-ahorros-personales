@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alcancía Digital - Iniciar sesión</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>ALCANCÍA DIGITAL</h1>
+  <div class="tarjeta">
+    <h2>INICIAR SESIÓN</h2>
+    <form id="formularioLogin">
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" required>
+
+      <label for="clave">Clave</label>
+      <input type="password" id="clave" required>
+
+      <button type="submit">ENTRAR</button>
+    </form>
+        <a href="registro.html" class="boton-secundario">REGISTRARSE</a>
+    <p id="mensaje" class="mensaje"></p>
+  </div>
+
+ <script src="ApiCliente.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

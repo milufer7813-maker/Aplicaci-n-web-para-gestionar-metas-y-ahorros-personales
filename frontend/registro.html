@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alcancía Digital - Registrarse</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>ALCANCÍA DIGITAL</h1>
+  <div class="tarjeta">
+    <h2>CREAR CUENTA</h2>
+    <form id="formularioRegistro">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" required>
+
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" required>
+
+      <label for="clave">Clave</label>
+      <input type="password" id="clave" required>
+
+      <label for="confirmar">Confirmar clave</label>
+      <input type="password" id="confirmar" required>
+
+      <button type="submit">REGISTRARSE</button>
+    </form>
+    <a href="login.html" class="boton-secundario">YA TENGO CUENTA</a>
+    <p id="mensaje" class="mensaje"></p>
+  </div>
+
+  <script src="ApiCliente.js"></script>
+  <script src="registro.js"></script>
+</body>
+</html>

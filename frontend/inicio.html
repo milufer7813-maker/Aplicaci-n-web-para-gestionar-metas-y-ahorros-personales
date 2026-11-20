@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alcancía Digital - Inicio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="encabezado">
+    <span>ALCANCÍA DIGITAL</span>
+    <span>MI ESPACIO DE AHORRO</span>
+  </div>
+
+  <nav class="menu">
+    <a href="inicio.html" class="activo">INICIO</a>
+    <a href="metas.html">MIS METAS</a>
+    <a href="ahorros.html">MIS AHORROS</a>
+    <a href="historial.html">HISTORIAL</a>
+    <a href="perfil.html">MI PERFIL</a>
+  </nav>
+
+  <div class="bienvenida">
+    <h2 id="bienvenida"></h2>
+    <p>HOY ES UN GRAN DÍA PARA AHORRAR</p>
+  </div>
+
+  <h3 class="subtitulo">RESUMEN DE MIS AHORROS</h3>
+  <div class="resumen">
+    <div class="tarjeta-resumen">
+      <h3>Total ahorrado</h3>
+      <p id="totalAhorrado">$0</p>
+    </div>
+    <div class="tarjeta-resumen">
+      <h3>Metas activas</h3>
+      <p id="metasActivas">0</p>
+    </div>
+    <div class="tarjeta-resumen">
+      <h3>Progreso general</h3>
+      <p id="progresoGeneral">0%</p>
+    </div>
+    <div class="tarjeta-resumen">
+      <h3>Próximo aporte</h3>
+      <p id="proximoAporte">Sin programar</p>
+    </div>
+  </div>
+  <p id="mensaje" class="mensaje error"></p>
+
+  <script src="ApiCliente.js"></script>
+  <script src="inicio.js"></script>
+</body>
+</html>
