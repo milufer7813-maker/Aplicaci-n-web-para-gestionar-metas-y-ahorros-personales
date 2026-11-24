@@ -1,7 +1,6 @@
 class ApiCliente {
   constructor() {
-    this.urlBase = 'http://localhost:3002/api';
-  }
+    this.urlBase= 'https://aplicaci-n-web-para-gestionar-metas-y.onrender.com/api';
 
   async peticion(ruta, metodo = 'GET', datos = null) {
     const opciones = {
