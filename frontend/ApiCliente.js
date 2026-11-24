@@ -1,12 +1,15 @@
 class ApiCliente {
   constructor() {
-    this.urlBase= 'https://aplicaci-n-web-para-gestionar-metas-y.onrender.com/api';
+    this.urlBase = 'https://aplicaci-n-web-para-gestionar-metas-y.onrender.com/api';
+  }
 
   async peticion(ruta, metodo = 'GET', datos = null) {
     const opciones = {
       method: metodo,
       headers: { 'Content-Type': 'application/json' }
     };
+    const token = localStorage.getItem('token');
+    if (token) opciones.headers.Authorization = 'Bearer ' + token;
     if (datos) {
       opciones.body = JSON.stringify(datos);
     }
@@ -15,6 +18,11 @@ class ApiCliente {
     const json = await respuesta.json();
 
     if (!respuesta.ok) {
+      if (respuesta.status === 401 && !ruta.includes('/usuarios/login')) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('usuario');
+        window.location.href = 'login.html';
+      }
       throw new Error(json.error || 'Error en la petición');
     }
     return json;
@@ -26,6 +34,20 @@ class ApiCliente {
 
   registrar(nombre, correo, clave) {
     return this.peticion('/usuarios', 'POST', { nombre, correo, clave });
+  }
+
+  obtenerPerfil() {
+    return this.peticion('/usuarios/perfil');
+  }
+
+  actualizarPerfil(nombre, correo) {
+    return this.peticion('/usuarios/perfil', 'PUT', { nombre, correo });
+  }
+
+  cerrarSesion() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+    window.location.href = 'login.html';
   }
 
   listarMetas(usuarioId) {
@@ -61,5 +83,9 @@ class ApiCliente {
       valor: valor,
       fecha_aporte: fechaAporte
     });
+  }
+
+  eliminarAhorro(id) {
+    return this.peticion('/ahorros/' + id, 'DELETE');
   }
 }
