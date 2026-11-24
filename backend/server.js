@@ -15,6 +15,7 @@ app.get('/', async (req, res) => {
     await db.consultar('SELECT 1');
     res.json({ mensaje: 'Servidor y base de datos funcionando' });
   } catch (error) {
+    console.error('Error real:', error.message);
     res.status(500).json({ error: 'No se pudo conectar a la base de datos' });
   }
 });
